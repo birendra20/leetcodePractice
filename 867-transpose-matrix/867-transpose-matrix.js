@@ -5,13 +5,13 @@
 var transpose = function(matrix) {
       
     
-    let res=[];
-    for(let i=0;i<matrix[0].length;i++){
-        r=[]
-        for(let j=0;j<matrix.length;j++){
-            r.push(matrix[j][i])
+    let result=[];
+    for(let c=0;c<matrix[0].length;c++){
+        let res=[]
+        for(let r=0;r<matrix.length;r++){
+            res.push(matrix[r][c])
         }
-        res.push(r)
+        result.push(res)
     }
-    return res
+    return result
 };
