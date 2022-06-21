@@ -25,7 +25,7 @@ var mergeTwoLists = function(l1, l2) {
     }
     let res =l1;
     while(l1!=null && l2!=null){
-     let temp2=l1;
+     let temp2=null; 
        while(l1!=null && l1.val<=l2.val){
            temp2=l1;
            l1=l1.next
