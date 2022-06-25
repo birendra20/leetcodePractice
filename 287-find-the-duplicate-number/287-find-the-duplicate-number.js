@@ -22,23 +22,47 @@
 // };
 
 
-var findDuplicate = function (nums) {
+// var findDuplicate = function (nums) {
  
-    let obj={};
+//     let obj={};
     
-    for(let i=0;i<nums.length;i++){
-        if(obj[nums[i]]==undefined){
+//     for(let i=0;i<nums.length;i++){
+//         if(obj[nums[i]]==undefined){
             
-            obj[nums[i]]=1
-        }else{
-            return nums[i]
-        }
+//             obj[nums[i]]=1
+//         }else{
+//             return nums[i]
+//         }
         
+//     }
+    
+    
+// };
+
+
+var findDuplicate = function(nums) {
+    let slow = nums[0];
+     let fast = nums[0];
+    
+    
+     slow = nums[slow];
+
+    fast = nums[nums[fast]];
+    
+    while (slow != fast) { // we are guaranteed to have a cycle
+        slow = nums[slow];
+        fast = nums[nums[fast]];
     }
     
+    fast = nums[0];
     
+    while (slow != fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+    
+    return slow;
 };
-
 
 
 
